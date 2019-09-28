@@ -1,0 +1,117 @@
+<!-- <div class="example-container" fxFlex='100' fxLayout = 'row' fxFlexLayoutAlign="space-between center">
+        <mat-toolbar class="example-toolbar">
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <img alt="" aria-hidden="true"
+                     src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png"
+                     srcset="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/keep_48dp.png 2x "
+                    style="width:40px;height:40px">
+                <h1 class="example-app-name">FundooAdmin</h1>
+            </div>
+          <div>
+                <img [matMenuTriggerFor]="aboveMenu1" style="cursor: pointer;" mat-card-avatar src="{{Image}}">
+                    <mat-menu #aboveMenu1="matMenu">  
+                     
+                      <div class = "profile" fxLayout="row" fxLayoutAlign="space-between center"  fxFlex = 100>
+                          <div>
+                            <div class="profileName">
+                                {{FirstName}}
+                            </div>
+                            <div class="profileEmail">
+                                {{Email}}
+                            </div>
+                          </div>
+                      </div>
+                    
+                    <mat-divider></mat-divider>
+                    <div fxLayout = "row" fxLayoutAlign="space-between end">
+                    
+                      <button class="signout"mat-button (click)="AddAccount()">
+                      Add Account
+                    </button>
+                    <button style="margin-left: 192px" mat-button (click)="signOut()">
+                      Sign out
+                    </button>
+                    </div>
+                    
+                  </mat-menu>
+            </div>
+          </div>
+        </mat-toolbar>
+    </div> -->
+<!--     
+    
+      <div fxLayout="row" class = "matcard" fxLayoutAlign="center center" >
+                <div fxLayout="row" >
+                        <mat-card>
+                            <div>Basic count</div>
+                        </mat-card>
+                        <mat-card>
+                                <div>Advance count</div>
+                        </mat-card>
+                </div>
+        </div> -->
+
+        <mat-toolbar >
+                <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+                        <div fxLayout="row" >
+                                <img alt="" aria-hidden="true"
+                                     src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png"
+                                     srcset="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/keep_48dp.png 2x "
+                                    style="width:40px;height:40px">
+                                <h1 class="example-app-name">FundooAdmin</h1>
+                            </div>
+                            <div fxLayout = "row" fxLayoutAlign="end">
+                            <button mat-button class="example-icon" (click)= "signOut()"> sign_out</button>
+                            </div>
+                  <!-- <mat-icon class="example-icon">sign_out</mat-icon> -->
+                </mat-toolbar-row>
+              </mat-toolbar>
+              <div fxLayout="row" class = "matcard"  fxLayoutAlign="center center" >
+                    <div fxLayout="row" fxLayoutGap = "90px" >
+                            <mat-card>
+                                <div fxLayout = "row">Basic count</div>
+                                <div fxLayout = "column">{{basicCount}}</div>
+                            </mat-card>
+                            <mat-card>
+                                    <div>Advance count</div>
+                                    <div fxLayout = "column">{{advanceCount}}</div>
+                            </mat-card>
+                    </div>
+            </div>
+
+<div fxLayout = "column" style = "padding-top: 10px" fxLayoutAlign = "center center" >
+<table mat-table [dataSource]="userList" class="mat-elevation-z8" style="width: 50vw">
+      
+      <!-- FirstName Column -->
+      <ng-container matColumnDef="FirstName">
+        <th mat-header-cell *matHeaderCellDef> FirstName</th>
+        <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+      </ng-container>
+    
+      <!-- LastName Column -->
+      <ng-container matColumnDef="LastName">
+        <th mat-header-cell *matHeaderCellDef> LastName </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+      </ng-container>
+    
+      <!-- UserName Column -->
+      <ng-container matColumnDef="UserName">
+        <th mat-header-cell *matHeaderCellDef> UserName </th>
+        <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+      </ng-container>
+
+      <!-- userType -->
+      <ng-container matColumnDef="UserType">
+            <th mat-header-cell *matHeaderCellDef> UserType </th>
+            <td mat-cell *matCellDef="let element"> {{element.userType}} </td>
+          </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<!-- paginator for pages -->
+<!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
+</div>                  
+                  
+
